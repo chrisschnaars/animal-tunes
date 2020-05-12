@@ -1,9 +1,14 @@
+:root {
+    --active-width: 600px;
+}
+
 .animal-card {
-    animation: 0.85s ease animateIn backwards;
+    // animation: 0.85s ease animateIn backwards;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: cover;
     flex: 1 0;
-    transition: all 0.5s ease;
+    transition: flex 0.5s ease;
     width: 100%;
 
     &::before {
@@ -15,9 +20,13 @@
 }
 
 .animal-card--is-active {
-    flex: 1 700px;
+    flex: 0 1 var(--active-width);
     margin: 0 0.125rem;
-    transition: all 0.125s ease;
+    transition: flex 0.125s ease;
+}
+
+.animal-card--is-loading {
+    animation: 0.85s ease animateIn backwards;
 }
 
 @keyframes animateIn {

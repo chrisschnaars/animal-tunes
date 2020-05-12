@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { animalList } from './animalList.js';
 import AnimalCard from './AnimalCard';
 import { audio } from '../../scripts/audio';
+import activeStateSetup from '../../scripts/activeStateSetup';
 
 export default function AnimalCardContainer() {
+    // Add global keyup listener
+    React.useEffect(() => activeStateSetup(), []);
+    React.useEffect(() => window.addEventListener('resize', activeStateSetup), []);
+
     // Active Key State
     const [activeAnimal, setActiveAnimal] = useState(undefined);
 
