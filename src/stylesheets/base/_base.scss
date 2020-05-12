@@ -1,0 +1,39 @@
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    background-color: $color__light-tan;
+    color: $color__black;
+    font-family: $font-family__regular;
+    hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $font-family__heading;
+    font-size: $font-size__14;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+p {
+    font-size: $font-size__14;
+    line-height: 1.4;
+}
+
+img {
+    width: 100%;
+}
+
+// Footer
+.footer {
+    p {
+        margin-bottom: 0;
+    }
+}

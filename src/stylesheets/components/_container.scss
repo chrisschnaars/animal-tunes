@@ -1,0 +1,13 @@
+// Container
+.container {
+    width: 100%;
+}
+
+.container__inner-container {
+    padding: 1rem;
+    width: 100%;
+
+    @media (min-width: $breakpoint__med) {
+        padding: 1.5rem 2rem;
+    }
+}

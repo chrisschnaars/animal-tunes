@@ -1,0 +1,108 @@
+{
+    "animals": [
+        {
+            "letter": "a",
+            "animal": "Alpaca"
+        },
+        {
+            "letter": "b",
+            "animal": "Bear"
+        },
+        {
+            "letter": "c",
+            "animal": "Cow"
+        },
+        {
+            "letter": "d",
+            "animal": "Deer"
+        },
+        {
+            "letter": "e",
+            "animal": "Elephant"
+        },
+        {
+            "letter": "f",
+            "animal": "Fox"
+        },
+        {
+            "letter": "g",
+            "animal": "Giraffe"
+        },
+        {
+            "letter": "h",
+            "animal": "Hedgehog"
+        },
+        {
+            "letter": "i",
+            "animal": "Iguana"
+        },
+        {
+            "letter": "j",
+            "animal": "Jellyfish"
+        },
+        {
+            "letter": "k",
+            "animal": "Koala"
+        },
+        {
+            "letter": "l",
+            "animal": "Lion"
+        },
+        {
+            "letter": "m",
+            "animal": "Monkey"
+        },
+        {
+            "letter": "n",
+            "animal": "Nightengale"
+        },
+        {
+            "letter": "o",
+            "animal": "Opossum"
+        },
+        {
+            "letter": "p",
+            "animal": "Panda"
+        },
+        {
+            "letter": "q",
+            "animal": "Qual"
+        },
+        {
+            "letter": "r",
+            "animal": "Raccoon"
+        },
+        {
+            "letter": "s",
+            "animal": "Squirrel"
+        },
+        {
+            "letter": "t",
+            "animal": "Tiger"
+        },
+        {
+            "letter": "u",
+            "animal": "Unicorn"
+        },
+        {
+            "letter": "v",
+            "animal": "Vulture"
+        },
+        {
+            "letter": "w",
+            "animal": "Wolf"
+        },
+        {
+            "letter": "x",
+            "animal": "X-Ray Fish"
+        },
+        {
+            "letter": "y",
+            "animal": "Yak"
+        },
+        {
+            "letter": "z",
+            "animal": "Zebra"
+        }
+    ]
+}
