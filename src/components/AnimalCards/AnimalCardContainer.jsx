@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { animalList } from './animalList.js';
 import AnimalCard from './AnimalCard';
-import { audio } from '../../scripts/audio';
+import playAudio from '../../scripts/audio';
 import activeStateSetup from '../../scripts/activeStateSetup';
 
 export default function AnimalCardContainer() {
-    // Add global keyup listener
+    // Loading Animation
+    const [isLoading, setIsLoading] = useState(true);
+    React.useEffect(() => {
+        setInterval(() => {
+            setIsLoading(false);
+        }, 2600);
+    }, []);
+
+    // Setup size of animal cards
     React.useEffect(() => activeStateSetup(), []);
     React.useEffect(() => window.addEventListener('resize', activeStateSetup), []);
 
@@ -14,9 +22,6 @@ export default function AnimalCardContainer() {
 
     // Update active keys on key press
     const handleKeyDown = (e) => {
-        // setActiveAnimal(undefined);
-        // audio.stopTone();
-
         const selectedKey = e.key.toLowerCase();
 
         // Exit if not usable key
@@ -28,7 +33,8 @@ export default function AnimalCardContainer() {
         for (let i = 0; i < animalList.length; i++) {
             if (animalList[i].letter === selectedKey) {
                 setActiveAnimal(animalList[i]);
-                audio.playTone(animalList[i].sound);
+                // audio.playTone(animalList[i].sound);
+                playAudio(animalList[i].animal);
             }
         }
     };
@@ -58,6 +64,7 @@ export default function AnimalCardContainer() {
                             activeFlag={activeFlag}
                             image={item.image}
                             index={index}
+                            loading={isLoading}
                             animal={item.animal}
                         />
                     );
