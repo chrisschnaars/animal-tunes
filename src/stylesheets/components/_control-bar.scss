@@ -4,9 +4,13 @@
     flex-direction: column;
 }
 
-.control-bar__keyboard-input {
+.control-bar__keyboard-input-container {
     overflow: hidden;
     position: absolute;
     top: -200px;
     width: 0;
+}
+
+.control-bar__keyboard-input {
+    font-size: $font-size__16;
 }
