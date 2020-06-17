@@ -3,22 +3,10 @@ import './styles.scss';
 import SVG from 'react-inlinesvg';
 
 export default function AnimalCard(props) {
-    const {
-        activeFlag,
-        animal,
-        handleMouseDown,
-        handleMouseUp,
-        image,
-        itemIndex,
-        letter,
-        loading,
-    } = props;
+    const { animal, handleClick, handleTransitionEnd, image, itemIndex, letter, loading } = props;
 
-    // Dynamically set card classes
+    // Add loading class and styles
     const loadingClass = loading ? ' animal-card--is-loading' : '';
-    const classes = activeFlag ? 'animal-card animal-card--is-active' : 'animal-card';
-
-    // Set loading animation delay
     const delay = loading ? `${itemIndex * 40}ms` : 'unset';
     const cardStyle = {
         animationDelay: delay,
@@ -30,17 +18,17 @@ export default function AnimalCard(props) {
 
     return (
         <div
-          className={`${classes} ${loadingClass}`}
-          style={cardStyle}
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
+            className={`animal-card ${loadingClass}`}
+            data-key={letter}
+            onClick={handleClick}
+            onTouchStart={handleClick}
+            onTransitionEnd={handleTransitionEnd}
+            style={cardStyle}
         >
-          <audio className={animal} preload="auto">
-            <source src={audioFile} type="audio/mp3" />
-          </audio>
+            <audio data-key={letter} preload="auto" src={audioFile}></audio>
 
-          <SVG className="animal-card__image" src={imagePath}></SVG>
-          <h2 className="animal-card__label">{letter.toUpperCase()}</h2>
+            <SVG className="animal-card__image" src={imagePath}></SVG>
+            <kbd className="animal-card__label">{letter.toUpperCase()}</kbd>
         </div>
     );
 }

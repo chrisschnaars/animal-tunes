@@ -1,40 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.scss';
-import animalList from '../../data/animalList.js';
+import animalData from '../../data/animalList.js';
 import AnimalCard from '../AnimalCard';
-import { playAudio } from '../../scripts';
 
 export default function AnimalCardContainer(props) {
     const { renderGrid } = props;
 
     // Set animal list
-    const [animals, setAnimals] = useState([]);
-    React.useEffect(() => {
-        let list = [];
-
-        if (renderGrid) {
-            // insert each item from list into subarrays accroding to row
-            animalList.forEach((row, rowIndex) => {
-                let rowList = [];
-                row.forEach((item, itemIndex) => {
-                    rowList.push(item);
-                });
-
-                list.push(rowList);
-            });
-        } else {
-            // insert each item from the list into one subarray
-            let rowList = [];
-            animalList.forEach((row, rowIndex) => {
-                row.forEach((item, itemIndex) => {
-                    rowList.push(item);
-                });
-            });
-            list.push(rowList);
-        }
-
-        setAnimals(list);
-    }, [renderGrid]);
+    const animals = useAnimalList(renderGrid);
 
     // Loading Animation
     // const isLoading = useLoadingState();
@@ -45,29 +18,6 @@ export default function AnimalCardContainer(props) {
         }, 2600);
     }, []);
 
-    // Active Key State
-    const [activeAnimal, setActiveAnimal] = useState(undefined);
-
-    // Update active keys on key press
-    const triggerSound = (letter) => {
-        const selectedKey = letter.toLowerCase();
-
-        // Update active animal state
-        animalList.forEach((row, rowIndex) => {
-            row.forEach((item, itemIndex) => {
-                if (item.letter === selectedKey) {
-                    setActiveAnimal(animalList[rowIndex][itemIndex]);
-                    playAudio(animalList[rowIndex][itemIndex].animal);
-                }
-            });
-        });
-    };
-
-    // End the sound and animation
-    const endSound = (e) => {
-        setActiveAnimal(undefined);
-    };
-
     // Keyup listener
     React.useEffect(
         () =>
@@ -77,30 +27,21 @@ export default function AnimalCardContainer(props) {
         []
     );
 
-    // Keydown listener
-    React.useEffect(() => document.addEventListener('keyup', endSound), []);
-
     return (
         <div className="site__section--main container__inner-container animals">
             {animals.map((row, rowIndex) => {
                 return (
                     <div className="animals__cards-container" key={rowIndex}>
                         {row.map((item, itemIndex) => {
-                            const activeFlag =
-                                activeAnimal && activeAnimal.letter === item.letter ? true : false;
-
-                            const uniqueKey = `${item.animal}${rowIndex}${itemIndex}`;
-
                             return (
                                 <AnimalCard
-                                    key={uniqueKey}
-                                    activeFlag={activeFlag}
+                                    key={item.letter}
                                     image={item.image}
                                     itemIndex={itemIndex}
                                     letter={item.letter}
                                     loading={isLoading}
-                                    handleMouseDown={() => triggerSound(item.letter)}
-                                    handleMouseUp={() => endSound()}
+                                    handleClick={() => triggerSound(item.letter)}
+                                    handleTransitionEnd={(e) => endSound(e, item.letter)}
                                     animal={item.animal}
                                 />
                             );
@@ -110,4 +51,58 @@ export default function AnimalCardContainer(props) {
             })}
         </div>
     );
+}
+
+function useAnimalList(renderGrid) {
+    const [animals, setAnimals] = useState([]);
+
+    useEffect(() => {
+        let list = [];
+
+        /*
+            Construction of rray of animals is based on
+            broswer width. This is potentially a hack.
+        */
+        if (renderGrid) {
+            animalData.forEach((row, rowIndex) => {
+                let rowList = [];
+                row.forEach((item, itemIndex) => {
+                    rowList.push(item);
+                });
+
+                list.push(rowList);
+            });
+        } else {
+            let rowList = [];
+            animalData.forEach((row, rowIndex) => {
+                row.forEach((item, itemIndex) => {
+                    rowList.push(item);
+                });
+            });
+            list.push(rowList);
+        }
+
+        setAnimals(list);
+    }, [renderGrid]);
+
+    return animals;
+}
+
+function triggerSound(key) {
+    const audio = document.querySelector(`audio[data-key="${key}"]`);
+    if (!audio) return;
+
+    // Play audio file
+    audio.currentTime = 0;
+    audio.play();
+
+    // Add active class
+    const activeKey = document.querySelector(`.animal-card[data-key="${key}"]`);
+    activeKey.classList.add('animal-card--is-active');
+}
+
+function endSound(e, key) {
+    if (e.propertyName !== 'transform') return;
+    const activeKey = document.querySelector(`.animal-card[data-key="${key}"]`);
+    activeKey.classList.remove('animal-card--is-active');
 }

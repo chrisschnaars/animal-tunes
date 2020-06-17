@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AnimalCardContainer from '../AnimalCardContainer';
 import ControlBar from '../ControlBar';
-import { init } from '../../scripts';
 
-function App() {
+export default function App() {
     // Console message
     React.useEffect(() => init(), []);
 
@@ -34,4 +33,6 @@ function useWindowWidth() {
     return width;
 }
 
-export default App;
+function init() {
+    console.log('Check out the code at https://github.com/chrisschnaars/animal-tunes');
+}
