@@ -1,0 +1,26 @@
+@import '../../stylesheets/base/config.scss';
+
+.animals {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @media (min-width: $breakpoint__02) {
+        justify-content: center;
+    }
+}
+
+.animals__cards-container {
+    align-content: center;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    @media (min-width: $breakpoint__02) {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+}

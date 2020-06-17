@@ -1,6 +1,5 @@
-export default function loadAnimation() {
+const loadAnimation = () => {
     const cards = document.querySelectorAll('.animal-card');
-    // const loadClass = 'animal-card--is-loading';
 
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener('animationend', () => {
@@ -8,4 +7,6 @@ export default function loadAnimation() {
             cards[i].style.animation = 'none';
         });
     }
-}
+};
+
+export default loadAnimation;

@@ -1,0 +1,85 @@
+@import '../../stylesheets/base/config.scss';
+
+.animal-card {
+    align-items: flex-end;
+    background-color: $color__tan;
+    border: 4px solid $color__dark-tan;
+    border-radius: 0.75rem;
+    box-shadow: 0px 2px 8px 0px rgba(27, 26, 24, 0.1);
+    display: flex;
+    flex: 0 1 auto;
+    height: auto;
+    margin: 1%;
+    max-width: 23%;
+    min-width: 23%;
+    padding: 0.5rem;
+    position: relative;
+    transition: all 0.55s ease;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 2px 32px 0px rgba(27, 26, 24, 0.2);
+        cursor: pointer;
+    }
+
+    @media (min-width: $breakpoint__01) {
+        max-width: 18%;
+        min-width: 18%;
+    }
+
+    @media (min-width: $breakpoint__02) {
+        max-width: 8%;
+        min-width: 8%;
+    }
+}
+
+.animal-card--is-loading {
+    animation: 0.55s ease animateIn backwards;
+}
+
+.animal-card--is-active {
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
+    transform: scale(1.3) translateY(-3px);
+    transform-origin: center center;
+    transition: all 0.45s ease;
+}
+
+.animal-card__image {
+    height: auto;
+    width: 100%;
+}
+
+.animal-card__label {
+    bottom: 4px;
+    left: 6px;
+    position: absolute;
+}
+
+@keyframes animateIn {
+    0% {
+        transform: scale(0);
+    }
+
+    30% {
+        transform: scale(1.3) translateY(-16px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes activeBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    66% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
