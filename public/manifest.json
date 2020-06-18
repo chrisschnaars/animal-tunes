@@ -1,5 +1,6 @@
 {
     "short_name": "Animal Tunes",
+    "description": "Animal keyboard",
     "name": "Animal Tunes",
     "icons": [
         {
@@ -21,5 +22,5 @@
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#000000",
-    "background_color": "#e8e3dd"
+    "background_color": "#f0ede7"
 }
