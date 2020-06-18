@@ -42,5 +42,6 @@
         "stylelint-order": "^4.1.0",
         "stylelint-prettier": "^1.1.2",
         "stylelint-scss": "^3.17.2"
-    }
+    },
+    "homepage": "http://schnaars.xyz/animal-soundboard"
 }
