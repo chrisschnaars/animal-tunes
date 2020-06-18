@@ -7,7 +7,7 @@ export default function AnimalCard(props) {
 
     // Add loading class and styles
     const loadingClass = loading ? ' animal-card--is-loading' : '';
-    const delay = loading ? `${itemIndex * 40}ms` : 'unset';
+    const delay = loading ? `${itemIndex * 60 + 100}ms` : 'unset';
     const cardStyle = {
         animationDelay: delay,
     };
