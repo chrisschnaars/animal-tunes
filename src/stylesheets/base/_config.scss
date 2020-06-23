@@ -4,11 +4,17 @@ $breakpoint__01: 37.5rem;
 $breakpoint__02: 68rem;
 
 // Colors
-$color__black: #1b1a18;
-$color__light-tan: #f0ede7;
-$color__tan: #e9e5dc;
-$color__dark-tan: #dbd4c2;
-$color__white: #fff;
+$color_black: #0e1216;
+$color_white: #fff;
+
+$color_tan-1: #f7f5f3;
+$color_tan-2: #eeece7;
+$color_tan-3: #e4e0d8;
+$color_tan-4: #d7d1c6;
+
+// UI Colors
+$color_background: $color_tan-1;
+$color_text: $color_black;
 
 // Type
 $font-family__heading: monospace;
