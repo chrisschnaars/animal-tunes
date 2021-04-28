@@ -27,7 +27,7 @@ export default function AnimalCard(props) {
         >
             <audio data-key={letter} preload="auto" src={audioFile}></audio>
 
-            <SVG className="animal-card__image" src={imagePath}></SVG>
+            <svg className="animal-card__image" src={imagePath}></svg>
             <kbd className="animal-card__label">{letter.toUpperCase()}</kbd>
         </div>
     );
