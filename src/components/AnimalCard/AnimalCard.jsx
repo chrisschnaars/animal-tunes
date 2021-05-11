@@ -1,9 +1,10 @@
 import React from 'react';
 import './styles.scss';
+import * as images from '../../assets/images/animals';
 import SVG from 'react-inlinesvg';
 
 export default function AnimalCard(props) {
-    const { animal, handleClick, handleTransitionEnd, image, itemIndex, letter, loading } = props;
+    const { animal, handleClick, handleTransitionEnd, itemIndex, letter, loading } = props;
 
     // Add loading class and styles
     const loadingClass = loading ? ' animal-card--is-loading' : '';
@@ -14,7 +15,7 @@ export default function AnimalCard(props) {
 
     // Image and audio files
     const audioFile = require(`../../assets/audio/${animal}.mp3`);
-    const imagePath = require(`../../assets/images/animals/${image}`);
+    const svgMarkup= images[`${animal}`];
 
     return (
         <div
@@ -26,8 +27,7 @@ export default function AnimalCard(props) {
             style={cardStyle}
         >
             <audio data-key={letter} preload="auto" src={audioFile}></audio>
-
-            <svg className="animal-card__image" src={imagePath}></svg>
+            <SVG src={svgMarkup} />
             <kbd className="animal-card__label">{letter.toUpperCase()}</kbd>
         </div>
     );
