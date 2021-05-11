@@ -126,9 +126,9 @@ const animalList = [
         },
         {
             letter: 'x',
-            animal: 'x-ray-fish',
+            animal: 'xrayfish',
             image: 'img_x.svg',
-            sound: 'x-ray-fish.mp3',
+            sound: 'xrayfish.mp3',
         },
         {
             letter: 'c',
