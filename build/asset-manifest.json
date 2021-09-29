@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "./animal-soundboard/static/css/main.ee274cbb.chunk.css",
+    "main.js": "./animal-soundboard/static/js/main.77b6b9f9.chunk.js",
+    "main.js.map": "./animal-soundboard/static/js/main.77b6b9f9.chunk.js.map",
+    "runtime-main.js": "./animal-soundboard/static/js/runtime-main.95fb84c7.js",
+    "runtime-main.js.map": "./animal-soundboard/static/js/runtime-main.95fb84c7.js.map",
+    "static/js/2.a93b1636.chunk.js": "./animal-soundboard/static/js/2.a93b1636.chunk.js",
+    "static/js/2.a93b1636.chunk.js.map": "./animal-soundboard/static/js/2.a93b1636.chunk.js.map",
+    "index.html": "./animal-soundboard/index.html",
+    "static/css/main.ee274cbb.chunk.css.map": "./animal-soundboard/static/css/main.ee274cbb.chunk.css.map",
+    "static/js/2.a93b1636.chunk.js.LICENSE.txt": "./animal-soundboard/static/js/2.a93b1636.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95fb84c7.js",
+    "static/js/2.a93b1636.chunk.js",
+    "static/css/main.ee274cbb.chunk.css",
+    "static/js/main.77b6b9f9.chunk.js"
+  ]
+}
