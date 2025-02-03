@@ -1,9 +1,6 @@
-@import '../../stylesheets/base/config.scss';
 
 .animal-card {
     align-items: flex-end;
-    background-color: $color_tan-2;
-    border: 4px solid $color_tan-4;
     border-radius: 0.75rem;
     box-shadow: 0px 2px 8px 0px rgba(27, 26, 24, 0.1);
     display: flex;
@@ -23,12 +20,12 @@
         cursor: pointer;
     }
 
-    @media (min-width: $breakpoint__01) {
+    @media (min-width: 37.5rem) {
         max-width: 18%;
         min-width: 18%;
     }
 
-    @media (min-width: $breakpoint__02) {
+    @media (min-width: 68rem) {
         max-width: 8%;
         min-width: 8%;
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.scss';
 import * as images from '../../assets/images/animals';
 import SVG from 'react-inlinesvg';
 
@@ -17,7 +16,7 @@ const AnimalCard = (props) => {
     const svgMarkup= images[`${animal}`];
 
     return (
-        <div
+        <button
             className={`animal-card ${loadingClass}`}
             data-key={letter}
             onClick={handleClick}
@@ -33,7 +32,7 @@ const AnimalCard = (props) => {
             </audio>
             <SVG src={svgMarkup} width={"100%"} height="auto" />
             <kbd className="animal-card__label">{letter.toUpperCase()}</kbd>
-        </div>
+        </button>
     );
 }
 

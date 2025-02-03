@@ -1,0 +1,36 @@
+
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    background-color: var(--color_background);
+    color: var(--color_text);
+    font-family: var(--font-family__regular);
+    hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+kbd {
+    font-family: var(--font-family__heading);
+    font-size: var(--font-size__16);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+p {
+    font-size: var(--font-size__16);
+    line-height: 1.4;
+}
+
+img {
+    width: 100%;
+}
+

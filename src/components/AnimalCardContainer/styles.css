@@ -1,4 +1,3 @@
-@import '../../stylesheets/base/config.scss';
 
 .animals {
     align-items: center;
@@ -6,7 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    @media (min-width: $breakpoint__02) {
+    @media (min-width: 68rem) {
         justify-content: center;
     }
 }
@@ -19,7 +18,7 @@
     justify-content: center;
     width: 100%;
 
-    @media (min-width: $breakpoint__02) {
+    @media (min-width: 68rem) {
         flex-wrap: nowrap;
         justify-content: center;
     }

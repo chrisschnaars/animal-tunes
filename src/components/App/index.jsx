@@ -9,10 +9,10 @@ export default function App() {
     // Hook to get window width
     // Used for conditional rendering of animal grid
     const width = useWindowWidth();
-    const renderGrid = width < 1088 ? false : true;
+    const renderGrid = width < 1024 ? false : true;
 
     return (
-        <div className="site container">
+        <div className="flex flex-col min-h-full">
             <AnimalCardContainer renderGrid={renderGrid} />
             <ControlBar />
         </div>
