@@ -27,7 +27,7 @@ const AnimalCard = (props) => {
             <audio
               data-key={letter}
               preload="auto"
-              src={`/audio/${audio}`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/audio/${audio}`}
             >
             </audio>
             <SVG src={svgMarkup} width={"100%"} height="100%" />
