@@ -1,7 +1,5 @@
 {
-    "extends": ["stylelint-config-recommended-scss"],
     "defaultSeverity": "warning",
-    "plugins": ["stylelint-order"],
     "rules": {
         "order/order": ["custom-properties", "declarations"],
         "order/properties-alphabetical-order": true,

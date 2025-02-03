@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './styles.scss';
 import animalData from '../../data/animalList.js';
 import AnimalCard from '../AnimalCard';
 
@@ -29,10 +28,10 @@ const AnimalCardContainer = (props) => {
     );
 
     return (
-        <div className="site__section--main container__inner-container animals">
+        <div className="inner-wrapper grow shrink flex flex-col items-center justify-start lg:justify-center">
             {animals.map((row, rowIndex) => {
                 return (
-                    <div className="animals__cards-container" key={rowIndex}>
+                    <div className="flex items-stretch content-center justify-center flex-wrap gap-1 lg:gap-0 lg:flex-nowrap" key={rowIndex}>
                         {row.map((item, itemIndex) => {
                             return (
                                 <AnimalCard
@@ -62,8 +61,8 @@ function useAnimalList(renderGrid) {
         let list = [];
 
         /*
-            Construction of rray of animals is based on
-            broswer width. This is potentially a hack.
+            Construction of array of animals is based on
+            browser width. This is potentially a hack.
         */
         if (renderGrid) {
             animalData.forEach((row, rowIndex) => {
