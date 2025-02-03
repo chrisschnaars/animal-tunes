@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import animalData from '../../data/animalList.js';
+import animalData from '../../../data/animalList.js';
 import AnimalCard from '../AnimalCard';
 
 const AnimalCardContainer = (props) => {

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import '../css/index.css'
+import './ui/css/index.css'
 
 export const metadata: Metadata = {
-    title: 'Animal Tunes',
-    description: 'Make animal loops by bashing the keyboard.',
-  }
+  title: 'Animal Tunes',
+  description: 'Make animal loops by bashing the keyboard.',
+}
 
 export default function RootLayout({
     children,
@@ -12,10 +12,10 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
     return (
-        <html lang="en">
-            <body>
-                <div id="root">{children}</div>
-            </body>
-        </html>
-    )
-  }
+      <html lang="en">
+          <body>
+              <div id="root">{children}</div>
+          </body>
+      </html>
+  )
+}

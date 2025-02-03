@@ -1,5 +1,5 @@
 import React from 'react';
-import * as images from '../../assets/images/animals';
+import * as images from '../../../assets/images/animals';
 import SVG from 'react-inlinesvg';
 
 const AnimalCard = (props) => {
