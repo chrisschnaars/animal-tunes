@@ -27,10 +27,10 @@ const AnimalCard = (props) => {
             <audio
               data-key={letter}
               preload="auto"
-              src={`${process.env.PUBLIC_URL}/assets/audio/${audio}`}
+              src={`/audio/${audio}`}
             >
             </audio>
-            <SVG src={svgMarkup} width={"100%"} height="auto" />
+            <SVG src={svgMarkup} width={"100%"} height="100%" />
             <kbd className="animal-card__label">{letter.toUpperCase()}</kbd>
         </button>
     );
