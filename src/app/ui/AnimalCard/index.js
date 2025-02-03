@@ -30,7 +30,7 @@ const AnimalCard = (props) => {
               src={`${process.env.NEXT_PUBLIC_BASE_PATH}/audio/${audio}`}
             >
             </audio>
-            <SVG src={svgMarkup} width={"100%"} height="auto" />
+            <SVG src={svgMarkup} width={"100%"} />
             <kbd className="animal-card__label">{letter.toUpperCase()}</kbd>
         </button>
     );
